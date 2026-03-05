@@ -3,258 +3,507 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact &amp; devis — Webify Meaux, création site web Meaux 77100</title>
-  <meta name="description" content="Demandez votre devis gratuit à Webify Meaux. Agence web à Meaux (77100), disponible Lun–Sam 9h–19h. Réponse sous 24h ouvrées pour votre projet web en Seine-et-Marne." />
+  <title>Contact &amp; devis gratuit — Webify Meaux, agence web Meaux 77100</title>
+  <meta name="description" content="Demandez votre devis gratuit à Webify Meaux. Réponse sous 24h, sans engagement. Agence web à Meaux (77100), disponible Lun–Sam 9h–19h." />
   <link rel="canonical" href="https://webify-meaux.fr/contact" />
   <meta property="og:title" content="Contact &amp; devis — Webify Meaux" />
-  <meta property="og:description" content="Devis gratuit pour votre site web à Meaux. Formulaire, téléphone, email — réponse sous 24h." />
+  <meta property="og:description" content="Devis gratuit pour votre site web à Meaux. Réponse sous 24h." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webify-meaux.fr/contact" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* ---- Styles spécifiques à la page contact ---- */
-
-    /* Hero contact */
-    .contact-hero {
-      background: linear-gradient(135deg, var(--brand-dark) 0%, #0a3d7a 100%);
-      padding: 4rem 0 3.5rem;
+    /* ==============================
+       HERO
+    ============================== */
+    .c-hero {
+      background: linear-gradient(135deg, #061d3e 0%, #0a3060 50%, #0f4a9c 100%);
+      padding: 5rem 0 4rem;
       color: #fff;
       position: relative;
       overflow: hidden;
     }
-    .contact-hero::before {
+    .c-hero::after {
       content: '';
       position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80') center/cover no-repeat;
-      opacity: .05;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: #f0f4ff;
+      clip-path: ellipse(55% 100% at 50% 100%);
     }
-    .contact-hero .inner { position: relative; z-index: 1; }
-    .contact-hero h1 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      line-height: 1.2;
-      margin-bottom: .8rem;
-    }
-    .contact-hero p {
-      font-size: 1rem;
-      color: rgba(255,255,255,.82);
-      max-width: 540px;
-    }
-
-    /* Bandeau garanties */
-    .contact-garanties {
-      background: var(--brand-accent);
-      padding: .9rem 0;
-    }
-    .garanties-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
+    .c-hero-eyebrow {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .garanties-list li {
-      display: flex;
-      align-items: center;
-      gap: .4rem;
+      gap: .45rem;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50px;
+      padding: .35rem 1rem;
+      font-size: .78rem;
       font-weight: 700;
-      font-size: .88rem;
-      color: var(--brand-dark);
-    }
-    .garanties-list li i {
-      font-size: 1rem;
-    }
-
-    /* Layout principal */
-    .contact-main {
-      padding: 4rem 0 5rem;
-      background: #f8faff;
-    }
-
-    /* Carte info */
-    .info-card {
-      background: var(--brand-bg);
-      border-radius: 18px;
-      padding: 2.2rem 1.8rem;
-      color: #fff;
-      height: 100%;
-    }
-    .info-card h2 {
-      font-size: 1.35rem;
-      margin-bottom: 1.6rem;
-      color: #fff;
-    }
-    .info-row {
-      display: flex;
-      align-items: flex-start;
-      gap: .85rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: #ffd04b;
       margin-bottom: 1.4rem;
     }
-    .info-icon {
-      width: 42px;
-      height: 42px;
-      min-width: 42px;
-      background: rgba(255,255,255,.12);
-      border-radius: 10px;
+    .c-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 1rem;
+    }
+    .c-hero h1 em {
+      font-style: normal;
+      color: #ffd04b;
+    }
+    .c-hero .lead {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.78);
+      max-width: 500px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .c-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: #ffd04b;
+      color: #061d3e;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: .85rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(255,208,75,.35);
+    }
+    .c-hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255,208,75,.5);
+      color: #061d3e;
+    }
+
+    /* Cards hero droite */
+    .c-hero-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .c-badge-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 16px;
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      backdrop-filter: blur(8px);
+    }
+    .c-badge-icon {
+      width: 46px;
+      height: 46px;
+      min-width: 46px;
+      background: #ffd04b;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #061d3e;
+    }
+    .c-badge-card strong {
+      display: block;
+      font-size: .93rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .c-badge-card span {
+      font-size: .81rem;
+      color: rgba(255,255,255,.62);
+    }
+
+    /* ==============================
+       BANDE STATS
+    ============================== */
+    .c-stats {
+      background: #f0f4ff;
+      padding: 2rem 0;
+    }
+    .c-stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .c-stat-item {
+      text-align: center;
+      padding: .6rem 1.6rem;
+      border-right: 1px solid #d8e2f5;
+    }
+    .c-stat-item:last-child { border-right: none; }
+    .c-stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #0a3060;
+      display: block;
+    }
+    .c-stat-label {
+      font-size: .78rem;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    /* ==============================
+       SECTION PRINCIPALE
+    ============================== */
+    .c-main {
+      background: #f0f4ff;
+      padding: 3.5rem 0 5rem;
+    }
+
+    /* ==============================
+       SIDEBAR INFOS
+    ============================== */
+    .c-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    /* Carte contact */
+    .c-contact-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem 1.8rem;
+      box-shadow: 0 2px 24px rgba(10,48,96,.08);
+    }
+    .c-contact-card h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0a3060;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .c-contact-card h2 i {
+      color: #3c7bf8;
+    }
+
+    .c-info-line {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .9rem 0;
+      border-bottom: 1px solid #f0f4ff;
+    }
+    .c-info-line:last-of-type { border-bottom: none; }
+    .c-info-ico {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.05rem;
-      color: var(--brand-accent);
     }
-    .info-row strong {
+    .c-info-ico.blue { background: #eff4ff; color: #3c7bf8; }
+    .c-info-ico.yellow { background: #fff8e6; color: #d4a000; }
+    .c-info-ico.green { background: #ecfdf5; color: #10b981; }
+    .c-info-text strong {
       display: block;
-      font-size: .88rem;
+      font-size: .82rem;
       font-weight: 700;
-      color: #fff;
-      margin-bottom: .15rem;
-    }
-    .info-row p {
-      margin: 0;
-      font-size: .87rem;
-      color: rgba(255,255,255,.78);
-      line-height: 1.5;
-    }
-    .info-row a {
-      color: var(--brand-accent);
-      font-weight: 700;
-      font-size: .9rem;
-    }
-    .info-divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,.12);
-      margin: 1.6rem 0;
-    }
-    .info-card h3 {
-      font-size: .88rem;
-      font-weight: 700;
+      color: #9ca3af;
       text-transform: uppercase;
-      letter-spacing: .06em;
-      color: var(--brand-accent);
-      margin-bottom: .9rem;
+      letter-spacing: .05em;
+      margin-bottom: .1rem;
     }
-    .chips-wrap { display: flex; flex-wrap: wrap; gap: .3rem; }
-    .city-chip-dark {
-      background: rgba(255,255,255,.10);
-      color: rgba(255,255,255,.9);
-      border: 1px solid rgba(255,255,255,.18);
-      font-size: .76rem;
-      font-weight: 600;
-      padding: .25rem .7rem;
-      border-radius: 20px;
+    .c-info-text a, .c-info-text p {
+      font-size: .95rem;
+      font-weight: 700;
+      color: #0a3060;
+      margin: 0;
+      text-decoration: none;
+    }
+    .c-info-text a:hover { color: #3c7bf8; }
+    .c-info-text .sub {
+      font-size: .8rem;
+      font-weight: 400;
+      color: #9ca3af;
     }
 
-    /* Carte formulaire */
-    .form-card {
-      background: #fff;
-      border-radius: 18px;
-      padding: 2.5rem 2.2rem;
-      box-shadow: 0 4px 40px rgba(5,42,88,.10);
-      height: 100%;
+    /* Carte zone */
+    .c-zone-card {
+      background: linear-gradient(135deg, #0a3060 0%, #0f4a9c 100%);
+      border-radius: 20px;
+      padding: 1.8rem;
+      color: #fff;
     }
-    .form-card h2 {
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--brand-bg);
-      margin-bottom: .3rem;
-    }
-    .form-card .form-intro {
-      font-size: .88rem;
-      color: #888;
-      margin-bottom: 1.8rem;
-    }
-    .form-section-label {
-      font-size: .78rem;
+    .c-zone-card h3 {
+      font-size: .8rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .07em;
-      color: var(--brand-cta);
-      margin: 1.4rem 0 .8rem;
+      letter-spacing: .08em;
+      color: #ffd04b;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: .4rem;
     }
-    .form-section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #e5e7eb;
-    }
-    .form-label {
+    .c-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .c-chip {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.88);
+      font-size: .75rem;
       font-weight: 600;
-      font-size: .85rem;
-      color: #374151;
-      margin-bottom: .3rem;
+      padding: .25rem .75rem;
+      border-radius: 50px;
     }
-    .form-control, .form-select {
-      border: 1.5px solid #e5e7eb;
-      border-radius: 10px;
-      padding: .65rem 1rem;
-      font-size: .9rem;
-      background: #fafbfc;
-      transition: border-color .2s, box-shadow .2s;
+
+    /* Carte appel direct */
+    .c-call-card {
+      background: #ffd04b;
+      border-radius: 20px;
+      padding: 1.6rem 1.8rem;
+      text-align: center;
     }
-    .form-control:focus, .form-select:focus {
-      border-color: var(--brand-cta);
-      box-shadow: 0 0 0 3px rgba(60,123,248,.13);
-      background: #fff;
+    .c-call-card p {
+      font-size: .83rem;
+      font-weight: 600;
+      color: #7a5c00;
+      margin-bottom: .5rem;
     }
-    .form-control::placeholder { color: #bbb; }
-    .form-check-input:checked {
-      background-color: var(--brand-cta);
-      border-color: var(--brand-cta);
-    }
-    .btn-submit {
-      background: var(--brand-cta);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      border: none;
-      border-radius: 12px;
-      padding: .9rem 1.5rem;
-      width: 100%;
+    .c-call-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: .5rem;
-      transition: background .2s, transform .2s, box-shadow .2s;
-      cursor: pointer;
+      background: #061d3e;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: .9rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(6,29,62,.3);
     }
-    .btn-submit:hover {
-      background: #2563d4;
+    .c-call-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(60,123,248,.35);
+      box-shadow: 0 8px 24px rgba(6,29,62,.4);
+      color: #fff;
     }
-    .submit-note {
-      text-align: center;
-      font-size: .79rem;
-      color: #aaa;
-      margin-top: .7rem;
+    .c-call-note {
+      font-size: .77rem;
+      color: #a07a00;
+      margin-top: .6rem;
+      margin-bottom: 0;
     }
-    .submit-note i { color: var(--brand-cta); }
 
-    /* Responsive */
+    /* ==============================
+       FORMULAIRE
+    ============================== */
+    .c-form-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2.8rem 2.4rem;
+      box-shadow: 0 2px 40px rgba(10,48,96,.10);
+    }
+    .c-form-head {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid #f0f4ff;
+    }
+    .c-form-head h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #061d3e;
+      margin-bottom: .3rem;
+    }
+    .c-form-head p {
+      font-size: .88rem;
+      color: #9ca3af;
+      margin: 0;
+    }
+
+    .c-section-sep {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .77rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #3c7bf8;
+      margin: 1.6rem 0 1rem;
+    }
+    .c-section-sep::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8edf8;
+    }
+    .c-section-sep i { font-size: .9rem; }
+
+    .form-label {
+      font-size: .83rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: .35rem;
+    }
+    .req { color: #ef4444; }
+    .form-control,
+    .form-select {
+      border: 1.5px solid #e5e7eb;
+      border-radius: 12px;
+      padding: .72rem 1rem;
+      font-size: .9rem;
+      color: #1f2937;
+      background: #fafbff;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+    .form-control:focus,
+    .form-select:focus {
+      border-color: #3c7bf8;
+      box-shadow: 0 0 0 4px rgba(60,123,248,.12);
+      background: #fff;
+      outline: none;
+    }
+    .form-control::placeholder { color: #c4c9d4; }
+    .form-control.is-invalid,
+    .form-select.is-invalid {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 3px rgba(239,68,68,.1);
+    }
+    .invalid-feedback { font-size: .8rem; color: #ef4444; }
+
+    textarea.form-control { resize: vertical; min-height: 120px; }
+
+    .form-check-input:checked {
+      background-color: #3c7bf8;
+      border-color: #3c7bf8;
+    }
+    .form-check-label {
+      font-size: .83rem;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+    .form-check-label a { color: #3c7bf8; font-weight: 600; }
+
+    .c-submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #3c7bf8 0%, #1a56c4 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 14px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(60,123,248,.35);
+    }
+    .c-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(60,123,248,.45);
+    }
+    .c-submit-btn:disabled {
+      opacity: .7;
+      transform: none;
+      cursor: not-allowed;
+    }
+    .c-submit-note {
+      text-align: center;
+      font-size: .78rem;
+      color: #b0b7c3;
+      margin-top: .8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .35rem;
+    }
+    .c-submit-note i { color: #3c7bf8; }
+
+    /* Checklist avantages sous le formulaire */
+    .c-trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.5rem;
+      margin-top: 1.4rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #f0f4ff;
+    }
+    .c-trust-item {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .8rem;
+      font-weight: 600;
+      color: #6b7280;
+    }
+    .c-trust-item i { color: #10b981; font-size: .9rem; }
+
+    /* ==============================
+       TOAST
+    ============================== */
+    #toast-success {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      font-weight: 700;
+      font-size: .92rem;
+      padding: 1rem 1.6rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(16,185,129,.35);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .35s, transform .35s;
+      pointer-events: none;
+    }
+    #toast-success.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==============================
+       RESPONSIVE
+    ============================== */
     @media (max-width: 991px) {
-      .form-card {
-        padding: 2rem 1.4rem;
-        margin-top: 1.5rem;
-      }
-      .info-card {
-        height: auto;
-      }
+      .c-form-card { padding: 2rem 1.5rem; }
+      .c-hero { padding: 4rem 0 3.5rem; }
     }
     @media (max-width: 575px) {
-      .contact-main { padding: 2.5rem 0 3.5rem; }
-      .form-card { padding: 1.5rem 1.1rem; }
+      .c-main { padding: 2rem 0 3.5rem; }
+      .c-form-card { padding: 1.5rem 1.1rem; }
+      .c-contact-card { padding: 1.5rem 1.2rem; }
+      .c-stat-item { border-right: none; }
     }
   </style>
 </head>
@@ -266,7 +515,7 @@
       <span class="topbar-label"><i class="bi bi-globe2 me-1"></i>Création de site web — Meaux &amp; alentours</span>
       <div class="d-flex align-items-center gap-2 flex-wrap">
         <span class="topbar-badge"><i class="bi bi-lightning-fill me-1"></i>Réponse en moins de 10 minutes</span>
-        <a href="tel:+33766035018" class="btn-call-topbar"><i class="bi bi-telephone-fill me-1"></i> Appeler — 07 66 03 50 18</a>
+        <a href="tel:+33766035018" class="btn-call-topbar"><i class="bi bi-telephone-fill me-1"></i> 07 66 03 50 18</a>
       </div>
     </div>
   </div>
@@ -298,44 +547,42 @@
   </nav>
 
   <!-- HERO -->
-  <section class="contact-hero" aria-label="Page contact Webify Meaux">
-    <div class="container inner">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-7">
-          <p style="font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-accent);margin-bottom:.7rem;">
-            <i class="bi bi-envelope-fill me-1"></i> Contactez-nous
+  <section class="c-hero" aria-label="Contact Webify Meaux">
+    <div class="container position-relative" style="z-index:1;">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="c-hero-eyebrow">
+            <i class="bi bi-envelope-fill"></i> Contactez-nous
+          </div>
+          <h1>Obtenez votre devis<br><em>gratuit &amp; sans engagement</em></h1>
+          <p class="lead">
+            Parlez-nous de votre projet web. Nous vous répondons en moins de 24h avec une offre claire et transparente, adaptée à votre budget.
           </p>
-          <h1>Contact &amp; devis gratuit<br>pour votre projet web</h1>
-          <div class="accent-bar"></div>
-          <p>Dites-nous en quelques mots votre projet. Nous vous répondons sous 24h ouvrées avec un devis clair, sans engagement.</p>
+          <a href="#contactForm" class="c-hero-cta">
+            <i class="bi bi-arrow-down-circle-fill"></i> Remplir le formulaire
+          </a>
         </div>
-        <div class="col-lg-5 d-none d-lg-flex justify-content-end">
-          <div style="display:flex;flex-direction:column;gap:.75rem;width:100%;max-width:320px;">
-            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.85rem;">
-              <div style="width:44px;height:44px;min-width:44px;background:var(--brand-accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--brand-dark);">
-                <i class="bi bi-clock-fill"></i>
-              </div>
+        <div class="col-lg-5 offset-lg-1 d-none d-lg-block">
+          <div class="c-hero-badges">
+            <div class="c-badge-card">
+              <div class="c-badge-icon"><i class="bi bi-clock-fill"></i></div>
               <div>
-                <strong style="display:block;font-size:.92rem;">Réponse sous 24h</strong>
-                <span style="font-size:.82rem;color:rgba(255,255,255,.7);">Lundi – Samedi, 9h – 19h</span>
+                <strong>Réponse sous 24h</strong>
+                <span>Lundi – Samedi, 9h – 19h</span>
               </div>
             </div>
-            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.85rem;">
-              <div style="width:44px;height:44px;min-width:44px;background:var(--brand-accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--brand-dark);">
-                <i class="bi bi-shield-check-fill"></i>
-              </div>
+            <div class="c-badge-card">
+              <div class="c-badge-icon"><i class="bi bi-shield-check-fill"></i></div>
               <div>
-                <strong style="display:block;font-size:.92rem;">Devis 100% gratuit</strong>
-                <span style="font-size:.82rem;color:rgba(255,255,255,.7);">Sans engagement, sans obligation</span>
+                <strong>Devis 100 % gratuit</strong>
+                <span>Sans engagement, zéro obligation</span>
               </div>
             </div>
-            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.85rem;">
-              <div style="width:44px;height:44px;min-width:44px;background:var(--brand-accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--brand-dark);">
-                <i class="bi bi-geo-alt-fill"></i>
-              </div>
+            <div class="c-badge-card">
+              <div class="c-badge-icon"><i class="bi bi-patch-check-fill"></i></div>
               <div>
-                <strong style="display:block;font-size:.92rem;">Agence locale à Meaux</strong>
-                <span style="font-size:.82rem;color:rgba(255,255,255,.7);">Meaux (77100)</span>
+                <strong>Agence locale Meaux 77</strong>
+                <span>Disponible en Seine-et-Marne</span>
               </div>
             </div>
           </div>
@@ -344,130 +591,157 @@
     </div>
   </section>
 
-  <!-- BANDEAU GARANTIES -->
-  <div class="contact-garanties">
+  <!-- STATS -->
+  <div class="c-stats">
     <div class="container">
-      <ul class="garanties-list">
-        <li><i class="bi bi-check2-circle"></i> Devis gratuit &amp; sans engagement</li>
-        <li><i class="bi bi-check2-circle"></i> Réponse sous 24h ouvrées</li>
-        <li><i class="bi bi-check2-circle"></i> Données protégées — jamais revendues</li>
-        <li><i class="bi bi-check2-circle"></i> Agence 100% locale — Meaux 77100</li>
-      </ul>
+      <div class="c-stats-grid">
+        <div class="c-stat-item">
+          <span class="c-stat-num">24h</span>
+          <span class="c-stat-label">Délai de réponse</span>
+        </div>
+        <div class="c-stat-item">
+          <span class="c-stat-num">100%</span>
+          <span class="c-stat-label">Gratuit &amp; sans engagement</span>
+        </div>
+        <div class="c-stat-item">
+          <span class="c-stat-num">5★</span>
+          <span class="c-stat-label">Satisfaction client</span>
+        </div>
+        <div class="c-stat-item">
+          <span class="c-stat-num">77</span>
+          <span class="c-stat-label">Département Seine-et-Marne</span>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- SECTION PRINCIPALE -->
-  <section class="contact-main" aria-label="Formulaire de contact et coordonnées">
+  <section class="c-main" aria-label="Formulaire de contact et coordonnées">
     <div class="container">
       <div class="row g-4 align-items-start">
 
-        <!-- INFOS CONTACT -->
+        <!-- SIDEBAR -->
         <div class="col-lg-4">
-          <div class="info-card">
-            <h2>Nos coordonnées</h2>
+          <div class="c-sidebar">
 
-            <div class="info-row">
-              <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
-              <div>
-                <strong>Téléphone</strong>
-                <p><a href="tel:+33766035018">07 66 03 50 18</a></p>
+            <!-- Coordonnées -->
+            <div class="c-contact-card">
+              <h2><i class="bi bi-headset"></i> Nous contacter</h2>
+
+              <div class="c-info-line">
+                <div class="c-info-ico blue"><i class="bi bi-telephone-fill"></i></div>
+                <div class="c-info-text">
+                  <strong>Téléphone</strong>
+                  <a href="tel:+33766035018">07 66 03 50 18</a>
+                </div>
+              </div>
+
+              <div class="c-info-line">
+                <div class="c-info-ico blue"><i class="bi bi-envelope-fill"></i></div>
+                <div class="c-info-text">
+                  <strong>Email</strong>
+                  <a href="mailto:contact@webifymeaux.fr">contact@webifymeaux.fr</a>
+                </div>
+              </div>
+
+              <div class="c-info-line">
+                <div class="c-info-ico yellow"><i class="bi bi-clock-fill"></i></div>
+                <div class="c-info-text">
+                  <strong>Disponibilité</strong>
+                  <p>Lun – Sam : 9h – 19h</p>
+                  <p class="sub">Réponse garantie sous 24h ouvrées</p>
+                </div>
+              </div>
+
+              <div class="c-info-line">
+                <div class="c-info-ico green"><i class="bi bi-check-circle-fill"></i></div>
+                <div class="c-info-text">
+                  <strong>Engagement</strong>
+                  <p>Devis gratuit, sans obligation</p>
+                </div>
               </div>
             </div>
 
-            <div class="info-row">
-              <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
-              <div>
-                <strong>Email</strong>
-                <p><a href="mailto:contact@webifymeaux.fr">contact@webifymeaux.fr</a></p>
+            <!-- Appel direct -->
+            <div class="c-call-card">
+              <p><i class="bi bi-telephone-outbound-fill me-1"></i> Vous préférez appeler ?</p>
+              <a href="tel:+33766035018" class="c-call-btn">
+                <i class="bi bi-telephone-fill"></i> 07 66 03 50 18
+              </a>
+              <p class="c-call-note">Disponible Lun–Sam · 9h–19h</p>
+            </div>
+
+            <!-- Zone d'intervention -->
+            <div class="c-zone-card">
+              <h3><i class="bi bi-geo-alt-fill"></i> Zone d'intervention</h3>
+              <div class="c-chips">
+                <span class="c-chip">Meaux</span>
+                <span class="c-chip">Trilport</span>
+                <span class="c-chip">Nanteuil-lès-Meaux</span>
+                <span class="c-chip">Crégy-lès-Meaux</span>
+                <span class="c-chip">Mareuil-lès-Meaux</span>
+                <span class="c-chip">Villenoy</span>
+                <span class="c-chip">Esbly</span>
+                <span class="c-chip">Lagny-sur-Marne</span>
+                <span class="c-chip">Chessy</span>
+                <span class="c-chip">Serris</span>
+                <span class="c-chip">Bussy-Saint-Georges</span>
+                <span class="c-chip">Claye-Souilly</span>
               </div>
             </div>
 
-            <div class="info-row">
-              <div class="info-icon"><i class="bi bi-clock-fill"></i></div>
-              <div>
-                <strong>Horaires</strong>
-                <p>Lun – Sam : 9h – 19h<br>
-                <span style="font-size:.8rem;color:rgba(255,255,255,.55);">Réponse sous 24h ouvrées</span></p>
-              </div>
-            </div>
-
-            <hr class="info-divider">
-
-            <h3><i class="bi bi-geo-alt-fill me-1"></i>Zone d'intervention</h3>
-            <div class="chips-wrap">
-              <span class="city-chip-dark">Meaux</span>
-              <span class="city-chip-dark">Trilport</span>
-              <span class="city-chip-dark">Nanteuil-lès-Meaux</span>
-              <span class="city-chip-dark">Crégy-lès-Meaux</span>
-              <span class="city-chip-dark">Mareuil-lès-Meaux</span>
-              <span class="city-chip-dark">Villenoy</span>
-              <span class="city-chip-dark">Esbly</span>
-              <span class="city-chip-dark">Lagny-sur-Marne</span>
-              <span class="city-chip-dark">Chessy</span>
-              <span class="city-chip-dark">Serris</span>
-              <span class="city-chip-dark">Bussy-Saint-Georges</span>
-              <span class="city-chip-dark">Claye-Souilly</span>
-            </div>
           </div>
         </div>
 
         <!-- FORMULAIRE -->
         <div class="col-lg-8">
-          <div class="form-card">
-            <h2>Demandez votre devis gratuit</h2>
-            <p class="form-intro">
-              Tous les champs marqués <span style="color:#dc3545;font-weight:700;">*</span> sont obligatoires.
-              Nous ne partageons jamais vos données.
-            </p>
+          <div class="c-form-card">
+
+            <div class="c-form-head">
+              <h2>Demandez votre devis gratuit</h2>
+              <p>Tous les champs marqués <span class="req">*</span> sont obligatoires. Réponse assurée sous 24h.</p>
+            </div>
 
             <form id="contactForm" novalidate aria-label="Formulaire de demande de devis">
               <div class="row g-3">
 
-                <!-- Séparateur : Vos coordonnées -->
+                <!-- Section : Vos coordonnées -->
                 <div class="col-12">
-                  <p class="form-section-label"><i class="bi bi-person-fill"></i> Vos coordonnées</p>
+                  <div class="c-section-sep"><i class="bi bi-person-fill"></i> Vos coordonnées</div>
                 </div>
 
-                <!-- Nom -->
                 <div class="col-sm-6">
-                  <label class="form-label" for="nom">Nom complet <span style="color:#dc3545;">*</span></label>
+                  <label class="form-label" for="nom">Nom complet <span class="req">*</span></label>
                   <input type="text" class="form-control" id="nom" name="nom"
-                         placeholder="Jean Dupont" required autocomplete="name"
-                         aria-required="true" />
+                         placeholder="Jean Dupont" required autocomplete="name" />
                 </div>
 
-                <!-- Téléphone -->
                 <div class="col-sm-6">
-                  <label class="form-label" for="tel">Téléphone <span style="color:#dc3545;">*</span></label>
+                  <label class="form-label" for="tel">Téléphone <span class="req">*</span></label>
                   <input type="tel" class="form-control" id="tel" name="tel"
-                         placeholder="06 12 34 56 78" required autocomplete="tel"
-                         aria-required="true" />
+                         placeholder="06 12 34 56 78" required autocomplete="tel" />
                 </div>
 
-                <!-- Email -->
                 <div class="col-sm-6">
-                  <label class="form-label" for="email">Email <span style="color:#dc3545;">*</span></label>
+                  <label class="form-label" for="email">Email <span class="req">*</span></label>
                   <input type="email" class="form-control" id="email" name="email"
-                         placeholder="jean.dupont@exemple.fr" required autocomplete="email"
-                         aria-required="true" />
+                         placeholder="jean@exemple.fr" required autocomplete="email" />
                 </div>
 
-                <!-- Ville -->
                 <div class="col-sm-6">
-                  <label class="form-label" for="ville">Ville / Quartier</label>
+                  <label class="form-label" for="ville">Ville</label>
                   <input type="text" class="form-control" id="ville" name="ville"
                          placeholder="Meaux, Lagny-sur-Marne…" autocomplete="address-level2" />
                 </div>
 
-                <!-- Séparateur : Votre projet -->
-                <div class="col-12" style="margin-top:.5rem;">
-                  <p class="form-section-label"><i class="bi bi-briefcase-fill"></i> Votre projet</p>
+                <!-- Section : Votre projet -->
+                <div class="col-12">
+                  <div class="c-section-sep"><i class="bi bi-briefcase-fill"></i> Votre projet</div>
                 </div>
 
-                <!-- Type projet -->
                 <div class="col-sm-6">
-                  <label class="form-label" for="type">Type de projet <span style="color:#dc3545;">*</span></label>
-                  <select class="form-select" id="type" name="type" required aria-required="true">
+                  <label class="form-label" for="type">Type de projet <span class="req">*</span></label>
+                  <select class="form-select" id="type" name="type" required>
                     <option value="">-- Sélectionner --</option>
                     <option value="vitrine">Site vitrine</option>
                     <option value="ecommerce">Site e-commerce</option>
@@ -479,7 +753,6 @@
                   </select>
                 </div>
 
-                <!-- Budget -->
                 <div class="col-sm-6">
                   <label class="form-label" for="budget">Budget envisagé</label>
                   <select class="form-select" id="budget" name="budget">
@@ -491,7 +764,6 @@
                   </select>
                 </div>
 
-                <!-- Délai -->
                 <div class="col-sm-6">
                   <label class="form-label" for="delai">Délai souhaité</label>
                   <select class="form-select" id="delai" name="delai">
@@ -503,38 +775,44 @@
                   </select>
                 </div>
 
-                <!-- Description -->
                 <div class="col-12">
                   <label class="form-label" for="description">Décrivez votre projet</label>
                   <textarea class="form-control" id="description" name="description"
-                            rows="4" placeholder="Parlez-nous de votre activité, vos objectifs, votre site existant si vous en avez un…"></textarea>
+                            rows="4"
+                            placeholder="Parlez-nous de votre activité, vos objectifs, votre site existant si vous en avez un…"></textarea>
                 </div>
 
-                <!-- Consentement RGPD -->
-                <div class="col-12">
+                <!-- RGPD -->
+                <div class="col-12" style="margin-top:.3rem;">
                   <div class="form-check" style="padding-left:1.8rem;">
-                    <input class="form-check-input" type="checkbox" id="consent" name="consent" required aria-required="true" />
-                    <label class="form-check-label" for="consent" style="font-size:.84rem;color:#555;">
+                    <input class="form-check-input" type="checkbox" id="consent" name="consent" required />
+                    <label class="form-check-label" for="consent">
                       J'accepte que Webify Meaux traite mes données pour répondre à ma demande.
-                      Voir notre <a href="confidentialite.html" style="color:var(--brand-cta);">politique de confidentialité</a>.
-                      <span style="color:#dc3545;">*</span>
+                      Voir notre <a href="confidentialite.html">politique de confidentialité</a>. <span class="req">*</span>
                     </label>
                   </div>
                 </div>
 
-                <!-- Submit -->
-                <div class="col-12" style="margin-top:.5rem;">
-                  <button type="submit" class="btn-submit">
+                <!-- Bouton -->
+                <div class="col-12" style="margin-top:.8rem;">
+                  <button type="submit" class="c-submit-btn">
                     <i class="bi bi-send-fill"></i> Envoyer ma demande
                   </button>
-                  <p class="submit-note">
+                  <p class="c-submit-note">
                     <i class="bi bi-shield-lock-fill"></i>
-                    Vos données sont protégées et ne seront jamais revendues.
+                    Données protégées — jamais revendues à des tiers
                   </p>
+                  <div class="c-trust-row">
+                    <div class="c-trust-item"><i class="bi bi-check-circle-fill"></i> Devis gratuit</div>
+                    <div class="c-trust-item"><i class="bi bi-check-circle-fill"></i> Sans engagement</div>
+                    <div class="c-trust-item"><i class="bi bi-check-circle-fill"></i> Réponse sous 24h</div>
+                    <div class="c-trust-item"><i class="bi bi-check-circle-fill"></i> Agence locale Meaux</div>
+                  </div>
                 </div>
 
               </div>
             </form>
+
           </div>
         </div>
 
@@ -585,7 +863,7 @@
 
   <!-- Toast succès -->
   <div id="toast-success" role="alert" aria-live="polite">
-    <i class="bi bi-check-circle-fill"></i> Votre demande a bien été envoyée&nbsp;! Nous vous répondons sous 24h.
+    <i class="bi bi-check-circle-fill"></i>&nbsp; Votre demande a bien été envoyée ! Nous vous répondons sous 24h.
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
