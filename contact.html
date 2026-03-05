@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; devis — Webify Meaux, création site web Meaux 77100</title>
+  <meta name="description" content="Demandez votre devis gratuit à Webify Meaux. Agence web à Meaux (77100), disponible Lun–Sam 9h–19h. Réponse sous 24h ouvrées pour votre projet web en Seine-et-Marne." />
+  <link rel="canonical" href="https://webify-meaux.fr/contact" />
+  <meta property="og:title" content="Contact &amp; devis — Webify Meaux" />
+  <meta property="og:description" content="Devis gratuit pour votre site web à Meaux. Formulaire, téléphone, email — réponse sous 24h." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webify-meaux.fr/contact" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ---- Styles spécifiques à la page contact ---- */
+
+    /* Hero contact */
+    .contact-hero {
+      background: linear-gradient(135deg, var(--brand-dark) 0%, #0a3d7a 100%);
+      padding: 4rem 0 3.5rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80') center/cover no-repeat;
+      opacity: .05;
+    }
+    .contact-hero .inner { position: relative; z-index: 1; }
+    .contact-hero h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: .8rem;
+    }
+    .contact-hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,.82);
+      max-width: 540px;
+    }
+
+    /* Bandeau garanties */
+    .contact-garanties {
+      background: var(--brand-accent);
+      padding: .9rem 0;
+    }
+    .garanties-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .garanties-list li {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-weight: 700;
+      font-size: .88rem;
+      color: var(--brand-dark);
+    }
+    .garanties-list li i {
+      font-size: 1rem;
+    }
+
+    /* Layout principal */
+    .contact-main {
+      padding: 4rem 0 5rem;
+      background: #f8faff;
+    }
+
+    /* Carte info */
+    .info-card {
+      background: var(--brand-bg);
+      border-radius: 18px;
+      padding: 2.2rem 1.8rem;
+      color: #fff;
+      height: 100%;
+    }
+    .info-card h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1.6rem;
+      color: #fff;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+      margin-bottom: 1.4rem;
+    }
+    .info-icon {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      background: rgba(255,255,255,.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      color: var(--brand-accent);
+    }
+    .info-row strong {
+      display: block;
+      font-size: .88rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .15rem;
+    }
+    .info-row p {
+      margin: 0;
+      font-size: .87rem;
+      color: rgba(255,255,255,.78);
+      line-height: 1.5;
+    }
+    .info-row a {
+      color: var(--brand-accent);
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .info-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,.12);
+      margin: 1.6rem 0;
+    }
+    .info-card h3 {
+      font-size: .88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--brand-accent);
+      margin-bottom: .9rem;
+    }
+    .chips-wrap { display: flex; flex-wrap: wrap; gap: .3rem; }
+    .city-chip-dark {
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.9);
+      border: 1px solid rgba(255,255,255,.18);
+      font-size: .76rem;
+      font-weight: 600;
+      padding: .25rem .7rem;
+      border-radius: 20px;
+    }
+
+    /* Carte formulaire */
+    .form-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.5rem 2.2rem;
+      box-shadow: 0 4px 40px rgba(5,42,88,.10);
+      height: 100%;
+    }
+    .form-card h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--brand-bg);
+      margin-bottom: .3rem;
+    }
+    .form-card .form-intro {
+      font-size: .88rem;
+      color: #888;
+      margin-bottom: 1.8rem;
+    }
+    .form-section-label {
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--brand-cta);
+      margin: 1.4rem 0 .8rem;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .form-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5e7eb;
+    }
+    .form-label {
+      font-weight: 600;
+      font-size: .85rem;
+      color: #374151;
+      margin-bottom: .3rem;
+    }
+    .form-control, .form-select {
+      border: 1.5px solid #e5e7eb;
+      border-radius: 10px;
+      padding: .65rem 1rem;
+      font-size: .9rem;
+      background: #fafbfc;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--brand-cta);
+      box-shadow: 0 0 0 3px rgba(60,123,248,.13);
+      background: #fff;
+    }
+    .form-control::placeholder { color: #bbb; }
+    .form-check-input:checked {
+      background-color: var(--brand-cta);
+      border-color: var(--brand-cta);
+    }
+    .btn-submit {
+      background: var(--brand-cta);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      padding: .9rem 1.5rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      cursor: pointer;
+    }
+    .btn-submit:hover {
+      background: #2563d4;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(60,123,248,.35);
+    }
+    .submit-note {
+      text-align: center;
+      font-size: .79rem;
+      color: #aaa;
+      margin-top: .7rem;
+    }
+    .submit-note i { color: var(--brand-cta); }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .form-card {
+        padding: 2rem 1.4rem;
+        margin-top: 1.5rem;
+      }
+      .info-card {
+        height: auto;
+      }
+    }
+    @media (max-width: 575px) {
+      .contact-main { padding: 2.5rem 0 3.5rem; }
+      .form-card { padding: 1.5rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div id="topbar" role="banner" aria-label="Barre de contact rapide">
+    <div class="topbar-inner container-fluid px-3">
+      <span class="topbar-label"><i class="bi bi-globe2 me-1"></i>Création de site web — Meaux &amp; alentours</span>
+      <div class="d-flex align-items-center gap-2 flex-wrap">
+        <span class="topbar-badge"><i class="bi bi-lightning-fill me-1"></i>Réponse en moins de 10 minutes</span>
+        <a href="tel:+33766035018" class="btn-call-topbar"><i class="bi bi-telephone-fill me-1"></i> Appeler — 07 66 03 50 18</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="mainNav" class="navbar navbar-expand-lg" aria-label="Navigation principale">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" aria-label="Webify Meaux — Accueil">
+        <span class="brand-name">Webify <span class="brand-city">Meaux</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
+              aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html" aria-current="page">Contact / Devis</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
+          <a href="contact.html" class="btn-primary-brand"><i class="bi bi-file-earmark-text"></i> Devis gratuit</a>
+          <a href="tel:+33766035018" class="btn-call-brand"><i class="bi bi-telephone-fill"></i> Appeler</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="contact-hero" aria-label="Page contact Webify Meaux">
+    <div class="container inner">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p style="font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-accent);margin-bottom:.7rem;">
+            <i class="bi bi-envelope-fill me-1"></i> Contactez-nous
+          </p>
+          <h1>Contact &amp; devis gratuit<br>pour votre projet web</h1>
+          <div class="accent-bar"></div>
+          <p>Dites-nous en quelques mots votre projet. Nous vous répondons sous 24h ouvrées avec un devis clair, sans engagement.</p>
+        </div>
+        <div class="col-lg-5 d-none d-lg-flex justify-content-end">
+          <div style="display:flex;flex-direction:column;gap:.75rem;width:100%;max-width:320px;">
+            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.85rem;">
+              <div style="width:44px;height:44px;min-width:44px;background:var(--brand-accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--brand-dark);">
+                <i class="bi bi-clock-fill"></i>
+              </div>
+              <div>
+                <strong style="display:block;font-size:.92rem;">Réponse sous 24h</strong>
+                <span style="font-size:.82rem;color:rgba(255,255,255,.7);">Lundi – Samedi, 9h – 19h</span>
+              </div>
+            </div>
+            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.85rem;">
+              <div style="width:44px;height:44px;min-width:44px;background:var(--brand-accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--brand-dark);">
+                <i class="bi bi-shield-check-fill"></i>
+              </div>
+              <div>
+                <strong style="display:block;font-size:.92rem;">Devis 100% gratuit</strong>
+                <span style="font-size:.82rem;color:rgba(255,255,255,.7);">Sans engagement, sans obligation</span>
+              </div>
+            </div>
+            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.85rem;">
+              <div style="width:44px;height:44px;min-width:44px;background:var(--brand-accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--brand-dark);">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <div>
+                <strong style="display:block;font-size:.92rem;">Agence locale à Meaux</strong>
+                <span style="font-size:.82rem;color:rgba(255,255,255,.7);">Meaux (77100)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANDEAU GARANTIES -->
+  <div class="contact-garanties">
+    <div class="container">
+      <ul class="garanties-list">
+        <li><i class="bi bi-check2-circle"></i> Devis gratuit &amp; sans engagement</li>
+        <li><i class="bi bi-check2-circle"></i> Réponse sous 24h ouvrées</li>
+        <li><i class="bi bi-check2-circle"></i> Données protégées — jamais revendues</li>
+        <li><i class="bi bi-check2-circle"></i> Agence 100% locale — Meaux 77100</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION PRINCIPALE -->
+  <section class="contact-main" aria-label="Formulaire de contact et coordonnées">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+
+        <!-- INFOS CONTACT -->
+        <div class="col-lg-4">
+          <div class="info-card">
+            <h2>Nos coordonnées</h2>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <strong>Téléphone</strong>
+                <p><a href="tel:+33766035018">07 66 03 50 18</a></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <strong>Email</strong>
+                <p><a href="mailto:contact@webifymeaux.fr">contact@webifymeaux.fr</a></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="bi bi-clock-fill"></i></div>
+              <div>
+                <strong>Horaires</strong>
+                <p>Lun – Sam : 9h – 19h<br>
+                <span style="font-size:.8rem;color:rgba(255,255,255,.55);">Réponse sous 24h ouvrées</span></p>
+              </div>
+            </div>
+
+            <hr class="info-divider">
+
+            <h3><i class="bi bi-geo-alt-fill me-1"></i>Zone d'intervention</h3>
+            <div class="chips-wrap">
+              <span class="city-chip-dark">Meaux</span>
+              <span class="city-chip-dark">Trilport</span>
+              <span class="city-chip-dark">Nanteuil-lès-Meaux</span>
+              <span class="city-chip-dark">Crégy-lès-Meaux</span>
+              <span class="city-chip-dark">Mareuil-lès-Meaux</span>
+              <span class="city-chip-dark">Villenoy</span>
+              <span class="city-chip-dark">Esbly</span>
+              <span class="city-chip-dark">Lagny-sur-Marne</span>
+              <span class="city-chip-dark">Chessy</span>
+              <span class="city-chip-dark">Serris</span>
+              <span class="city-chip-dark">Bussy-Saint-Georges</span>
+              <span class="city-chip-dark">Claye-Souilly</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMULAIRE -->
+        <div class="col-lg-8">
+          <div class="form-card">
+            <h2>Demandez votre devis gratuit</h2>
+            <p class="form-intro">
+              Tous les champs marqués <span style="color:#dc3545;font-weight:700;">*</span> sont obligatoires.
+              Nous ne partageons jamais vos données.
+            </p>
+
+            <form id="contactForm" novalidate aria-label="Formulaire de demande de devis">
+              <div class="row g-3">
+
+                <!-- Séparateur : Vos coordonnées -->
+                <div class="col-12">
+                  <p class="form-section-label"><i class="bi bi-person-fill"></i> Vos coordonnées</p>
+                </div>
+
+                <!-- Nom -->
+                <div class="col-sm-6">
+                  <label class="form-label" for="nom">Nom complet <span style="color:#dc3545;">*</span></label>
+                  <input type="text" class="form-control" id="nom" name="nom"
+                         placeholder="Jean Dupont" required autocomplete="name"
+                         aria-required="true" />
+                </div>
+
+                <!-- Téléphone -->
+                <div class="col-sm-6">
+                  <label class="form-label" for="tel">Téléphone <span style="color:#dc3545;">*</span></label>
+                  <input type="tel" class="form-control" id="tel" name="tel"
+                         placeholder="06 12 34 56 78" required autocomplete="tel"
+                         aria-required="true" />
+                </div>
+
+                <!-- Email -->
+                <div class="col-sm-6">
+                  <label class="form-label" for="email">Email <span style="color:#dc3545;">*</span></label>
+                  <input type="email" class="form-control" id="email" name="email"
+                         placeholder="jean.dupont@exemple.fr" required autocomplete="email"
+                         aria-required="true" />
+                </div>
+
+                <!-- Ville -->
+                <div class="col-sm-6">
+                  <label class="form-label" for="ville">Ville / Quartier</label>
+                  <input type="text" class="form-control" id="ville" name="ville"
+                         placeholder="Meaux, Lagny-sur-Marne…" autocomplete="address-level2" />
+                </div>
+
+                <!-- Séparateur : Votre projet -->
+                <div class="col-12" style="margin-top:.5rem;">
+                  <p class="form-section-label"><i class="bi bi-briefcase-fill"></i> Votre projet</p>
+                </div>
+
+                <!-- Type projet -->
+                <div class="col-sm-6">
+                  <label class="form-label" for="type">Type de projet <span style="color:#dc3545;">*</span></label>
+                  <select class="form-select" id="type" name="type" required aria-required="true">
+                    <option value="">-- Sélectionner --</option>
+                    <option value="vitrine">Site vitrine</option>
+                    <option value="ecommerce">Site e-commerce</option>
+                    <option value="refonte">Refonte de site existant</option>
+                    <option value="seo">SEO local uniquement</option>
+                    <option value="identite">Identité visuelle / Logo</option>
+                    <option value="maintenance">Maintenance / Support</option>
+                    <option value="autre">Autre</option>
+                  </select>
+                </div>
+
+                <!-- Budget -->
+                <div class="col-sm-6">
+                  <label class="form-label" for="budget">Budget envisagé</label>
+                  <select class="form-select" id="budget" name="budget">
+                    <option value="">-- Non défini --</option>
+                    <option value="moins1k">Moins de 1 000 €</option>
+                    <option value="1k2k">1 000 – 2 000 €</option>
+                    <option value="2k5k">2 000 – 5 000 €</option>
+                    <option value="5kplus">Plus de 5 000 €</option>
+                  </select>
+                </div>
+
+                <!-- Délai -->
+                <div class="col-sm-6">
+                  <label class="form-label" for="delai">Délai souhaité</label>
+                  <select class="form-select" id="delai" name="delai">
+                    <option value="">-- Non défini --</option>
+                    <option value="urgent">Urgent (&lt; 2 semaines)</option>
+                    <option value="1mois">Sous 1 mois</option>
+                    <option value="3mois">Sous 3 mois</option>
+                    <option value="flexible">Flexible</option>
+                  </select>
+                </div>
+
+                <!-- Description -->
+                <div class="col-12">
+                  <label class="form-label" for="description">Décrivez votre projet</label>
+                  <textarea class="form-control" id="description" name="description"
+                            rows="4" placeholder="Parlez-nous de votre activité, vos objectifs, votre site existant si vous en avez un…"></textarea>
+                </div>
+
+                <!-- Consentement RGPD -->
+                <div class="col-12">
+                  <div class="form-check" style="padding-left:1.8rem;">
+                    <input class="form-check-input" type="checkbox" id="consent" name="consent" required aria-required="true" />
+                    <label class="form-check-label" for="consent" style="font-size:.84rem;color:#555;">
+                      J'accepte que Webify Meaux traite mes données pour répondre à ma demande.
+                      Voir notre <a href="confidentialite.html" style="color:var(--brand-cta);">politique de confidentialité</a>.
+                      <span style="color:#dc3545;">*</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="col-12" style="margin-top:.5rem;">
+                  <button type="submit" class="btn-submit">
+                    <i class="bi bi-send-fill"></i> Envoyer ma demande
+                  </button>
+                  <p class="submit-note">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    Vos données sont protégées et ne seront jamais revendues.
+                  </p>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <p class="footer-brand">Webify <span>Meaux</span></p>
+          <p style="font-size:.88rem;margin-bottom:1rem;">Agence web locale à Meaux (77100). Création de sites vitrine, e-commerce, SEO local et refonte en Seine-et-Marne.</p>
+          <a href="tel:+33766035018" style="font-size:.88rem;color:var(--brand-accent);font-weight:600;"><i class="bi bi-telephone-fill me-1"></i> 07 66 03 50 18</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5>Pages</h5>
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+          <a href="contact.html">Contact / Devis</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5>Services</h5>
+          <a href="services.html">Site vitrine</a>
+          <a href="services.html">E-commerce</a>
+          <a href="services.html">Refonte</a>
+          <a href="services.html">SEO local</a>
+          <a href="services.html">Maintenance</a>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5>Zone d'intervention</h5>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.8rem;">Meaux, Trilport, Lagny-sur-Marne, Chessy, Serris, Bussy-Saint-Georges, Esbly, Claye-Souilly…</p>
+          <h5 class="mt-3">Légal</h5>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container d-flex justify-content-between flex-wrap gap-2">
+        <span>© 2026 Webify Meaux — Tous droits réservés</span>
+        <span>Création site web Meaux · Agence web 77100 · SEO local Seine-et-Marne</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast succès -->
+  <div id="toast-success" role="alert" aria-live="polite">
+    <i class="bi bi-check-circle-fill"></i> Votre demande a bien été envoyée&nbsp;! Nous vous répondons sous 24h.
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
