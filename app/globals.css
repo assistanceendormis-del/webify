@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #070814;
+  --primary: #00FFB2;
+  --accent: #B0FFE7;
+  --btnalt: #433F40;
+  --title: #FFFFFF;
+  --body: #D5E9E5;
+}
+
+body {
+  background-color: #070814;
+  color: #D5E9E5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 178, 0.3) transparent;
+}
